@@ -12,3 +12,6 @@ class Game(db.Model):
     created_at = db.Column(db.String)
   
     # user_id = db.relationship("User", foreign_key=[game_user_upload_id])
+
+    def to_dict(self):
+        return {'id': self.game_id, 'title': self.title, 'description': self.description, 'release_date': self.release_date, 'created_at': self.created_at} 
