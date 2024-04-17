@@ -2,14 +2,14 @@ from config import app, db
 from models.game import Game
 from models.Comment import Comment
 #from models.replies import Replies
-#from models.User import User
+from models.User import User
 
 if __name__ == '__main__':
     with app.app_context():
         Game.query.delete()
         Comment.query.delete()
        # Replies.query.delete()
-       # User.query.delete()
+        User.query.delete()
         db.session.commit()
 
         #create game instances 
@@ -42,7 +42,11 @@ if __name__ == '__main__':
         db.session.add_all([c1,c2,c3,c4,c5,c6,c7,c8,c9])
         db.session.commit()
 
+    #add user instances 
+        admin =User(first_name="admin", last_name="admin",username="admin")
+        u1 = User(first_name="Sponge", last_name="Bob", username="Spongebob")
 
-
-
+# add & commit user instances
+        db.session.add_all([admin,u1])
+        db.session.commit()
 
