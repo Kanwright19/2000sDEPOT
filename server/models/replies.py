@@ -1,10 +1,11 @@
 from config import db
+from sqlalchemy_serializer import SerializerMixin
 
-class Replies(db.Model):
+class Replies(db.Model, SerializerMixin):
     __tablename__ = 'replies'
 
-    reply_id= db.Column(db.Integer, primary_key=True)
-    #game_post_id = db.Column(db.Integer, foreign_key= User.user_id , Game.game_id)
+    user_reply_id= db.Column(db.Integer, primary_key=True)
+    #game_reply_id = db.Column(db.Integer, db.ForeignKey(('Users_Auth.user_id , games.game_id'))
     body = db.Column(db.String(555))
     created_at= db.Coluum(db.datetime)
 

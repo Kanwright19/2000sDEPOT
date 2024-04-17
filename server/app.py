@@ -2,6 +2,8 @@ from flask import make_response, request
 from config import app , db
 import ipdb
 from models.game import Game
+from models.Comment import Comment
+
 
 
 @app.route("/")
@@ -28,3 +30,29 @@ def game_by_id(id):
     find_game= Game.query.get(id)
     return make_response(find_game.to_dict())
     
+@app.route('/comments', methods=['GET'])
+def all_comments():
+    comments = Comment.query.all()
+    comment_list = [comment.to_dict() for comment in comments]
+    #ipdb.set_trace()
+    return make_response(comment_list, 200)
+
+@app.route('/comments/<int:id>', methods = ['GET','PATCH', 'DELETE'])
+def comment_by_id(id):
+    comment = Comment.query.get(id)
+
+    if request.method == 'PATCH':
+        params = request.json
+
+        for attr in params:
+            setattr(comment, attr, params[attr])
+     
+        db.session.commit()
+        return make_response(comment.to_dict(), 200)
+    elif request.method == 'DELETE':
+        db.session.delete(comment)
+        db.session.commit()
+
+        return make_response('', 204)
+    elif request.method == 'GET':
+        return make_response(comment.to_dict())

@@ -1,9 +1,15 @@
 from config import app, db
 from models.game import Game
+from models.Comment import Comment
+#from models.replies import Replies
+#from models.User import User
 
 if __name__ == '__main__':
     with app.app_context():
         Game.query.delete()
+        Comment.query.delete()
+       # Replies.query.delete()
+       # User.query.delete()
         db.session.commit()
 
         #create game instances 
@@ -16,6 +22,27 @@ if __name__ == '__main__':
         stardew_valley = Game(title='Stardew Valley', description='Stardew Valley is a 2016 farm life sim video game developed by Eric "ConcernedApe" Barone. Players take the role of a character who inherits their deceased grandfather\'s dilapidated farm in a place known as Stardew Valley.', release_date=2016, created_at='04/12/2024')
         grand_theft_auto_3 = Game(title='Grand Theft Auto 3', description='Grand Theft Auto III is a 2001 action-adventure game developed by DMA Design (now Rockstar North) and published by Rockstar Games. It is the first 3D title in the Grand Theft Auto series. Players assume the role of Claude, an imprisoned criminal who is betrayed by his girlfriend and left for dead. Upon escaping, Claude embarks on a quest for revenge and power in the fictional Liberty City.', release_date=2001, created_at='04/12/2024')
         mario_kart_wii = Game(title='Mario Kart Wii', description='Mario Kart Wii is a 2008 kart racing video game developed and published by Nintendo for the Wii console. It is the sixth installment in the Mario Kart series and introduces motion controls using the Wii Remote. Players compete in races using characters from the Mario franchise and can use various items to hinder opponents and gain an advantage.', release_date=2008, created_at='04/12/2024')
-        #add & commit instances
+        
+#add & commit game instances
         db.session.add_all([mario_kart_wii, grand_theft_auto_3, stardew_valley, excitebike_64, world_of_warcraft, gta_vice_city, wind_waker, final_fantasy_x, halo_combat_evolved])
         db.session.commit()
+
+        #create comment instances
+        c1 = Comment(title="Mario IS LIFE!", body=" As a super Mario fan I KNOW that Mario Kart Wii is the best game invented!", game_comment_id=mario_kart_wii.game_id)
+        c2 = Comment(title= "Halo", body = "Halo combat evolved is one of the best fighting games out of the 2000s!", game_comment_id=halo_combat_evolved.game_id)
+        c3 = Comment(title="Excitebike 64", body =" Anyone remember how cool Excitebike 64 was when it came out? Pure mayhem between me and my brothers.",game_comment_id=excitebike_64.game_id )
+        c4 = Comment(title="Grand Theft Auto 3", body ="By far once of the most uncut and cool games of the 2000s.", game_comment_id=grand_theft_auto_3.game_id)
+        c5 = Comment(title="Star of Stardew Valley", body =" Stardeq was my jam! After school, In School, Before School! I was the best VIRTUAL farmer you'd ever seen!", game_comment_id=stardew_valley.game_id)
+        c6 = Comment(title= "GTA Vice City", body =" You are BUGGIN' if you think GTA 3 is better than Vice City! I will die on this hill!", game_comment_id=gta_vice_city.game_id)
+        c7 = Comment(title= " World of Warcraft", body =" What game is topping WOW or World of Warcraft if you've lived your entire life under a rock! Not Halo , Not even COD, World or Warcreaft remains KING!", game_comment_id=world_of_warcraft.game_id)
+        c8 = Comment(title="Final Fantasy", body= "If you are leaving final fantasy out of the conversation you might as well exit stage left. Final fantasy had me in the worst chokehold of the 2000s! #RESPECT ", game_comment_id=final_fantasy_x.game_id)
+        c9 = Comment(title=" THE LEGEND", body =" The Legend of Zelda really turned me and my best girlies into gamers. God Bless the 2000s for that!", game_comment_id=wind_waker.game_id)
+        
+        #add & commit comment instances
+        db.session.add_all([c1,c2,c3,c4,c5,c6,c7,c8,c9])
+        db.session.commit()
+
+
+
+
+

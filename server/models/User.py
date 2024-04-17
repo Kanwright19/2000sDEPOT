@@ -1,6 +1,7 @@
 from config import db 
+from sqlalchemy_serializer import SerializerMixin
 
-class User(db.Model):
+class User(db.Model, SerializerMixin):
     __tablename__='User_Auth'
 
     user_id= db.Column(db.Integer, primary_key=True)
