@@ -9,6 +9,7 @@ ipdb = "*"
 flask-sqlalchemy = "*"
 flask-migrate = "*"
 sqlalchemy-serializer = "*"
+flask-bcrypt = "*"
 
 [dev-packages]
 
