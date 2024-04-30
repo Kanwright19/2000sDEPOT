@@ -1,6 +1,8 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate 
+from flask_bcrypt import Bcrypt
+
 
 #instatiate flask 
 app = Flask(__name__)
@@ -18,3 +20,5 @@ db.init_app(app)
 #new instance of Migrate class
 migrate = Migrate(app,db)
 
+#instatiate bcrypt 
+bcrypt = Bcrypt(app)
