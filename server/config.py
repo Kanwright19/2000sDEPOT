@@ -17,3 +17,4 @@ db.init_app(app)
 
 #new instance of Migrate class
 migrate = Migrate(app,db)
+
