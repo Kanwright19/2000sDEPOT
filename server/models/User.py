@@ -13,6 +13,8 @@ class User(db.Model, SerializerMixin):
     _password_hash = db.Column(db.String, nullable =False)
     created_at = db.Column(db.DateTime, server_default= db.func.now())
     
+    comments = db.relationship('Comment', back_populates = 'user')
+    
 @property 
 def password_hash(self):
     return self._password_hash
@@ -27,7 +29,7 @@ def password_hash(self, password):
 def authenticate(self, password):
     return bcrypt.check_password_hash(self.password_hash, password.encode('123abc'))
 
-comments = db.relationship('Comment', back_populates = 'user')
+
 
 def __repr__(self):
     return f'<User user_id={self.user_id}, first_name={self.first_name}, last_name={self.last_name}, username={self.username}, password={self._password_hash}>'

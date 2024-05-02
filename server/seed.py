@@ -11,6 +11,7 @@ if __name__ == '__main__':
        # Replies.query.delete()
         User.query.delete()
         db.session.commit()
+        
 
         #create game instances 
         halo_combat_evolved = Game(title='Halo: Combat Evolved', description='Halo: Combat Evolved is a 2001 first-person shooter video game developed by Bungie and published by Microsoft Game Studios. It is the first game in the Halo series and follows the story of Master Chief, a supersoldier who fights against the alien Covenant on the ringworld known as Halo.', release_date=2001, created_at='04/12/2024')
@@ -50,3 +51,4 @@ if __name__ == '__main__':
         db.session.add_all([admin,u1])
         db.session.commit()
 
+        # print("Loading seed...")

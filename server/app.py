@@ -1,4 +1,4 @@
-from flask import make_response, request
+from flask import make_response, request, session
 from config import app , db
 #import ipdb
 from models.game import Game
