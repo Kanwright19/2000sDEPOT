@@ -1,4 +1,4 @@
-from config import db
+from app import db
 from sqlalchemy_serializer import SerializerMixin
 
 class FavGames(db.Model, SerializerMixin):
@@ -9,4 +9,4 @@ class FavGames(db.Model, SerializerMixin):
     game_id = db.Column(db.Integer, db.ForeignKey('games.id'))
 
     user = db.relationship('User', back_populates='fav_games')
-    game = db.relationship('Games', back_populates= 'fav_games')
+    game = db.relationship('Game', back_populates= 'fav_games')

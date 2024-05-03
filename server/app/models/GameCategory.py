@@ -1,6 +1,6 @@
 from sqlalchemy_serializer import SerializerMixin
 from sqlalchemy.ext.associationproxy import association_proxy
-from config import db, bcrypt
+from app import db, bcrypt
 
 class Category(db.Model, SerializerMixin):
     __tablename__ = 'categories'
@@ -10,7 +10,7 @@ class Category(db.Model, SerializerMixin):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(250), nullable=True)
 
-    game_categories = db.relationship('GameCategory',back_populates='category')
+    game_categories = db.relationship('GameCategory', back_populates='category')
     games = association_proxy('game_categories', 'games')
 
 
@@ -21,5 +21,5 @@ class GameCategory(db.Model):
     game_id = db.Column(db.Integer, db.ForeignKey('games.id'))
     game_category_id = db.Column(db.Integer, db.ForeignKey('categories.id'))
 
-    game = db.relationship('Games', back_populates='game_categories')
+    game = db.relationship('Game', back_populates='game_categories')
     category = db.relationship('Category', back_populates='game_categories')
