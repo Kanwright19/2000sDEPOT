@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import Header from "./Components/Header"
+import Header from "./Header"
 
 
 function ErrorPage() {

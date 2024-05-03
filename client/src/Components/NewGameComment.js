@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Header from './header';
+import Header from './Header';
 
-function NewRecipeForm() {
+function NewGameComment() {
     const [title, setTitle] = useState("");
   
     const [body, setBody] = useState("");
