@@ -1,11 +1,11 @@
-from config import app, db
-from models.game import Game, db
-from models.Comment import Comment, db
-from models.GameCategory import GameCategory, db
-from models.FavoriteGames import FavGames, db
-from models.User import User, db
+from app import app, db
+from app.models.game import Game, db
+from app.models.comment import Comment, db
+from app.models.GameCategory import GameCategory, db
+from app.models.FavoriteGames import FavGames, db
+from app.models.user import User, db
 from random import randint, choice as rc
-from app import app
+from app import  app
 
 
 
