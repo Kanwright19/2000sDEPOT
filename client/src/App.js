@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import React, { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom"
-import auth from "./components/auth";
+import Auth from './Components/Auth';
 
 function App() {
   
@@ -14,7 +14,7 @@ function App() {
       <img src={logo} alt="2000s DEPOTlogo" />
       <div
         className="login container">
-          {!! logInUser ? <Outlet/> : <auth setUser={setLogInUser}/>}
+          {!! logInUser ? <Outlet/> : <Auth setUser={setLogInUser}/>}
       </div>
       <section 
         className= "About">

@@ -1,7 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
-import Replies from "./components/Replies";
-
+import NewGameComment from "./Components/NewGameComment"
+import ErrorPage from "./Components/ErrorPage"
+import GameLibrary from "./Components/GameLibrary"
+import FavGames from "./Components/FavGames"
+import GameComment from "./Components/GameComment"
 
 const routes = [
     {
@@ -9,24 +12,24 @@ const routes = [
         element: <App />,
     },
     {
-        path: '/recipes',
-        element: <  />,
+        path: '/games',
+        element: < GameLibrary />,
     },
     {
-        path: '/games/new',
-        element: < />,
+        path: '/games/comments/commentTitles',
+        element: < GameComment />,
     },
     {
         path: '/games/favorite',
-        element: <  />,
+        element: <  FavGames/>,
     },
     {
-        path: '/games/:gameId',
-        element: < />,
+        path: '/games/:new_game_comment_Id',
+        element: < NewGameComment/>,
     },
     {
         path: "*",
-        element: <  />,
+        element: < ErrorPage />,
     }
 ]
 

@@ -15,7 +15,7 @@ function Header() {
             <br/>
             <nav className="nav-links">
                 <NavLink to="/games">Game Library</NavLink>
-                <NavLink to="/games/new">New Games</NavLink>
+                <NavLink to="/games/:new_game_comment_Id">New Games</NavLink>
                 <NavLink to="/games/comments">Game Comments</NavLink>
                 <NavLink to="/games/favorites">Top Games </NavLink>
                 <br/>
