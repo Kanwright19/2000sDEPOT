@@ -1,10 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
 import Replies from "./components/Replies";
-import NewRecipeForm from "./components/NewRecipeForm";
-import FavoritesPage from "./components/FavoritesPage";
-import ErrorPage from "./components/ErrorPage";
-import UpdateRecipeForm from "./components/UpdateRecipeForm";
+
 
 const routes = [
     {
@@ -13,23 +10,23 @@ const routes = [
     },
     {
         path: '/recipes',
-        element: <MainRecipePage />,
+        element: <  />,
     },
     {
-        path: '/recipes/new',
-        element: <NewRecipeForm />,
+        path: '/games/new',
+        element: < />,
     },
     {
-        path: '/recipes/favorite',
-        element: <FavoritesPage />,
+        path: '/games/favorite',
+        element: <  />,
     },
     {
-        path: '/recipes/:recipeId',
-        element: <UpdateRecipeForm/>,
+        path: '/games/:gameId',
+        element: < />,
     },
     {
         path: "*",
-        element: <ErrorPage />,
+        element: <  />,
     }
 ]
 
