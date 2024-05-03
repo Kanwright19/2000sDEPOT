@@ -1,4 +1,5 @@
 from config import db, bcrypt
+from sqlalchemy.ext.associationproxy import association_proxy
 from sqlalchemy_serializer import SerializerMixin
 
 class User(db.Model, SerializerMixin):
@@ -14,7 +15,10 @@ class User(db.Model, SerializerMixin):
     created_at = db.Column(db.DateTime, server_default= db.func.now())
     
     comments = db.relationship('Comment', back_populates = 'user')
-    
+    games = db.relationship('Games', back_populates='user')
+    fav_games = db.relationship('FavGames', back_populates= 'user')
+    fav_games_proxy = association_proxy('fav_games', 'games')
+
 @property 
 def password_hash(self):
     return self._password_hash

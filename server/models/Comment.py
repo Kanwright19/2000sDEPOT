@@ -13,7 +13,7 @@ class Comment(db.Model, SerializerMixin):
     
     
     #relates to game table included comment id 
-    game_comment_id= db.Column(db.Integer, db.ForeignKey('games.game_id') )
+    game_comment_id= db.Column(db.Integer, db.ForeignKey('games.id') )
     # relates to user 
     user_comment_id= db.Column(db.Integer, db.ForeignKey('users.user_id'))
 
