@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import GameLibrary from "./GameLibrary";
-import Header from "./Header";
+import Header from "./Components/Header";
 
 
 function FavGamesPage() {
