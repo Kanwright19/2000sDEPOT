@@ -6,15 +6,15 @@ class User(db.Model, SerializerMixin):
     __tablename__='users'
 
     serialize_rules= ('-comments.user', '-comments.game_comment_id','-comments.user_game-id', '-password_hash', )
-    
+
     user_id= db.Column(db.Integer, primary_key=True)
     first_name= db.Column(db.String(50))
     last_name= db.Column(db.String(50))
     username= db.Column(db.String, nullable=False)
     password_hash = db.Column(db.String, nullable =False)
     created_at = db.Column(db.DateTime, server_default= db.func.now())
-    
-    comments = db.relationship('Comment', back_populates = 'user')
+
+    # comments = db.relationship('Comment', back_populates = 'user')
     games = db.relationship('Game', back_populates='user')
     fav_games = db.relationship('FavGames', back_populates= 'user')
     fav_games_proxy = association_proxy('fav_games', 'games')

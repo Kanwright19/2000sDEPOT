@@ -1,12 +1,13 @@
 from flask import Flask
-from flask_migrate import Migrate 
+from flask_cors import CORS
+from flask_migrate import Migrate
 from flask_bcrypt import Bcrypt
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import MetaData
 
-#instatiate flask 
+#instatiate flask
 app = Flask(__name__)
-
+CORS(app)
 app.config['SQLALCHEMY_DATABASE_URI']= 'sqlite:///games.db'
 app.config['SQLALCHEMY_TRACK_NOTIFICATIONS'] = False
 
@@ -23,7 +24,7 @@ db.init_app(app)
 
 migrate = Migrate(app,db)
 
-#instatiate bcrypt 
+#instatiate bcrypt
 bcrypt = Bcrypt(app)
 
 

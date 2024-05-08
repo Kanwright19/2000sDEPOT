@@ -1,27 +1,26 @@
-import React, { useState } from "react";
-import GameLibraryCard from "./GameLibrary";
-
-function GameLibraryList({ games, addNewGame, handleDelete, handleUpdate }) {
-    const [favGames, setFavGames] = useState([]);
-
-    const addToFavorites = (game) => {
-        setFavGames([...favGames, game]);
-    };
-
-    return (
-        <ul className="games">
-            {games.map((game) => (
-                <GameLibraryCard
-                    key={game.id}
-                    game={game} 
-                    addToFavorites={addToFavorites} 
-                    addNewGame={addNewGame} 
-                    handleDelete={handleDelete} 
-                    handleUpdate={() => handleUpdate(game.id)}
-                />
-            ))}
-        </ul>
-    );
+function GameLibraryList({ games }) {
+	return (
+		<>
+			<h2>Game List</h2>
+			{Array.isArray(games) && games.length > 0 ? (
+				games.map(
+					(
+						{ title, description, created_at, release_date },
+						index
+					) => (
+						<div key={index}>
+							<h3>Title: {title}</h3>
+							<p>Description: {description}</p>
+							<p>Date of Creation: {created_at}</p>
+							<p>Released Date: {release_date}</p>
+						</div>
+					)
+				)
+			) : (
+				<p>Loading...</p>
+			)}
+		</>
+	);
 }
 
 export default GameLibraryList;
