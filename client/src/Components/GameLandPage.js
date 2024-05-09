@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import GameLibraryList from "./GameLibraryList";
 import GameComment from "./GameComment";
 import Search from "./Search";
-import Header from "./header";
+import Header from "./Components/Header";
 import { useNavigate } from "react-router-dom";
 import Footer from "./footer";
 import ReactSwitch from "react-switch";
