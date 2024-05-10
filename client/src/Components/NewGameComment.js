@@ -34,8 +34,12 @@ function NewGameComment() {
 		setGame_comment_id("");
 	};
 
+	const handleOnClick = () => {
+		window.location.reload();
+	};
+
 	return (
-		<div>
+		<div className="container">
 			<h2></h2>
 			<form onSubmit={handleSubmit}>
 				<input
@@ -58,7 +62,14 @@ function NewGameComment() {
 					rows={"5"}
 					cols={"33"}
 				/>
-				<button type="submit">Add</button>
+				<div style={{ display: "flex" }}>
+					<button onClick={handleOnClick} type="submit">
+						Add
+					</button>
+					<button>
+						<Link to={"/games"}>Go back to Game Library</Link>
+					</button>
+				</div>
 			</form>
 		</div>
 	);
