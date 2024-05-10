@@ -1,7 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
-import Header from "./Header";
 import ReactSwitch from "react-switch";
-import { useTheme } from "./ThemeContext";
+import { useTheme } from "../Components/ThemeContext";
 
 function ErrorPage() {
 	const { isDarkMode, toggleTheme } = useTheme();
