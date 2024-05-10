@@ -42,7 +42,13 @@ const GameLibrary = () => {
 				<Link to={"/games/post"}>Click to Post Game!</Link>
 			</button>
 			<button>
+				<Link to={"/games/favorites"}> View Favorite Games! </Link>
+			</button>
+			<button>
 				<Link to={"/games/comments"}>Click to Leave a Comment!</Link>
+			</button>
+			<button>
+				<Link to={"/"}>Logout!</Link>
 			</button>
 			<GameLibraryList games={games} />
 		</div>

@@ -175,7 +175,7 @@ function Auth({ setUser }) {
 					<section className="About">
 						<h2> A Peak Into The 2000s DEPOT?!</h2>
 						<p>
-							"Welcome to 2000s DEPOT, your ultimate destination
+							Welcome to 2000s DEPOT, your ultimate destination
 							for all things gaming from the iconic era of the
 							2000s! Dive into discussions, debates, and
 							nostalgia-filled conversations about your favorite
@@ -184,10 +184,16 @@ function Auth({ setUser }) {
 							discovering hidden gems, join our vibrant community
 							of fellow gamers to reminisce, strategize, and share
 							your passion for the games that defined a
-							generation."
+							generation.
 						</p>
 					</section>
 
+                    <section className="New Games Inside ">
+						<h2> RECENTLY REMINCING ON.. !</h2>
+						<p>
+							"Stardew Valley , Nebula Conquest: Galactic War, Chrono Legacy: Reawakening, and MORE INSIDE!"
+						</p>
+					</section>
 					<div className="switch">
 						<label>
 							{" "}

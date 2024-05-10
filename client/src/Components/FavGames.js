@@ -31,11 +31,14 @@ function FavGames() {
 		<div>
 			<Header />
 			<h1>Favorite Games</h1>
+			
 			<ul>
 				{favGames.map((games) => (
 					<GameLibrary key={games.id} games={games} />
 				))}
+				
 			</ul>
+			{/* <img>https://i.pinimg.com/564x/b4/a1/02/b4a1024d83bf6fbcb72377eaaadbaa9e.jpg</img> */}
 			{/* <div className="switch">
 				<label> {theme === "light" ? "Light Mode" : "Dark Mode"}</label>
 				<ReactSwitch
