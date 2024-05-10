@@ -1,4 +1,5 @@
 function GameCommentList({ comments }) {
+	
 	return (
 		<>
 			<h2>List of Comments</h2>

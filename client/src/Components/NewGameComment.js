@@ -45,7 +45,7 @@ function NewGameComment() {
 					onChange={(e) => setTitle(e.target.value)}
 				/>
 				<input
-					placeholder="Game Id"
+					placeholder="Game ID"
 					type="text"
 					value={game_comment_id}
 					onChange={(e) => setGame_comment_id(e.target.value)}

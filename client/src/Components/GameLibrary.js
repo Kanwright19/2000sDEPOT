@@ -32,17 +32,17 @@ const GameLibrary = () => {
 
 	return (
 		<div className={isDarkMode ? "dark-mode" : "light-mode"}>
-			<h1>GameLibrary</h1>
+			<h1>Game Library</h1>
 
 			<div className="switch">
 				<label> {!isDarkMode ? "Light Mode" : "Dark Mode"}</label>
 				<ReactSwitch onChange={toggleTheme} checked={isDarkMode} />
 			</div>
 			<button>
-				<Link to={"/games/post"}>Click to Post Game</Link>
+				<Link to={"/games/post"}>Click to Post Game!</Link>
 			</button>
 			<button>
-				<Link to={"/games/comments"}>Click to post a comment</Link>
+				<Link to={"/games/comments"}>Click to Leave a Comment!</Link>
 			</button>
 			<GameLibraryList games={games} />
 		</div>

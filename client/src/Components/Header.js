@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import React from 'react';
-import Logout from './Logout';
+// import Logout from './Logout';
 
 
 function Header() {
@@ -10,7 +10,7 @@ function Header() {
         <header>
             <h1 className="header-title">My Games</h1>
             <div style={{ display: 'flex', justifyContent: 'flex-end'}}>
-                <Logout />
+                {/* <Logout /> */}
             </div>
             <br/>
             <nav className="nav-links">
