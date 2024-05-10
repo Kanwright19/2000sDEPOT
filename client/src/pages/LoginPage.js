@@ -86,8 +86,9 @@ const LoginPage = ({ setUser }) => {
 	return (
 		<div>
 			<Container className="auth-container d-flex flex-column">
-				<section>
-					<h1>Welcome to the Auth page</h1>
+				<section
+					style={{ textAlign: "center" , color: "orange" }}>
+					<h1>Welcome to the 2000s Auth Page!</h1>
 				</section>
 
 				<Button onClick={toggleSignUp} variant="primary">

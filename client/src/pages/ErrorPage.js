@@ -15,7 +15,7 @@ function ErrorPage() {
 					to the homepage.
 				</p>
 				<button>
-					<Link to={"/"}>RETURN HOME</Link>
+					<Link to={"/games"}>RETURN HOME</Link>
 				</button>
 			</section>
 			<div className="switch">

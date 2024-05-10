@@ -6,7 +6,7 @@ function GameCommentList({ comments, deleteComment }) {
 	return (
 		<>
 			<h2 style={{ display: "flex", justifyContent: "center" }}>
-				List of Comments
+				Check Out Our Game Comments Below!
 			</h2>
 			<div className="gamelist">
 				{Array.isArray(comments) && comments.length > 0 ? (

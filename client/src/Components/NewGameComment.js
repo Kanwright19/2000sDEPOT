@@ -67,7 +67,7 @@ function NewGameComment() {
 						Add
 					</button>
 					<button>
-						<Link to={"/games"}>Go back to Game Library</Link>
+						<Link to={"/games"}>Go back to Game Library!</Link>
 					</button>
 				</div>
 			</form>

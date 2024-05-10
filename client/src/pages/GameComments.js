@@ -46,7 +46,7 @@ const GameLibrary = () => {
 	return (
 		<div className={isDarkMode ? "dark-mode" : "light-mode"}>
 			<h1 style={{ display: "flex", justifyContent: "center" }}>
-				Comment Section
+				Add to Our 2000s Comment Section!
 			</h1>
 
 			{/* <div className="switch">

@@ -37,7 +37,7 @@ function AddNewGame() {
 
 	return (
 		<div className="container">
-			<h2>Fill the information to post a new game</h2>
+			<h2>Fill the Information to Post a New 2000s Game!</h2>
 			<form onSubmit={handleSubmit}>
 				<input
 					placeholder="Title"

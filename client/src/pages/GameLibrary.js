@@ -34,18 +34,28 @@ const GameLibrary = () => {
 	return (
 		<div className="game">
 			<div className={isDarkMode ? "dark-mode" : "light-mode"}>
-				<h1>GameLibrary</h1>
+				<section style={{color: "orange", lineHeight: 1.5, fontSize: 25}}> 
+					<h1>2000s Game Library!</h1></section>
+				{/* <h1>2000s Game Library!</h1> */}
 				{/* <div className="switch">
 					<label> {!isDarkMode ? "Light Mode" : "Dark Mode"}</label>
 					<ReactSwitch onChange={toggleTheme} checked={isDarkMode} />
 				</div> */}
 				<div className="game-button">
 					<button>
-						<Link to={"/games/post"}>Click to Post Game</Link>
+						<Link to={"/games/post"}>Click to Post A 2000s Game!</Link>
 					</button>
 					<button>
+					<Link to={"/games/favorites"}>View Favorite Games!</Link>
+				</button>
+					<button>
 						<Link to={"/games/comments"}>
-							Click to post a comment
+							Leave A Comment About A 2000's Game!
+						</Link>
+					</button>
+					<button>
+						<Link to={"/"}>
+							Logout!
 						</Link>
 					</button>
 				</div>
