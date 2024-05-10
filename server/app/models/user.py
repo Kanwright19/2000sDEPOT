@@ -31,7 +31,7 @@ class User(db.Model, SerializerMixin):
                 first_name='Default',
                 last_name='User',
                 # Set a default password (you might want to change this)
-                password_hash='default_password'
+                password_hash='default_pw'
             )
             db.session.add(default_user)
             db.session.commit()

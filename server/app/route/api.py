@@ -17,7 +17,7 @@ def index():
 
 
 def create_jwt_token(payload):
-    # Your secret key (guard it with your life!)
+    # The secret key (guard it with your life!)
     secret_key = 'supersecretkey'
     # Algorithm for token generation
     algorithm = 'HS256'
@@ -43,7 +43,7 @@ def login():
         user_details = request.json
         user = User.query.filter_by(
             username=user_details.get("username")).first()
-        if not user or user.password_hash != 'default_password':
+        if not user or user.password_hash != 'default_pw':
             return {
                 "error": "Incorrect password/username"
             }, 401
