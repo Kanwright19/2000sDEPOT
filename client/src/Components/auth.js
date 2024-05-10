@@ -1,11 +1,26 @@
 import { useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
 import { useFormik } from "formik";
+// import logo from "logo.svg"
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
 import { useTheme } from "./ThemeContext";
 import ReactSwitch from "react-switch";
 import "../App.css";
+
+// const express = require('express');
+// const cors = require('cors');
+
+// const app = express();
+
+// app.use(cors()); // This enables CORS for all routes
+
+// // Your other route handlers here
+
+// app.listen(5000, () => {
+//   console.log('Server is running on port 5000');
+// });
+
 
 function Auth({ setUser }) {
 	const { isDarkMode, toggleTheme } = useTheme();

@@ -9,7 +9,7 @@ function ErrorPage() {
 		<div className={isDarkMode ? "dark-mode" : "light-mode"}>
 			<section style={{ textAlign: "center" }}>
 				<h1 className="404">404</h1>
-				<h2>OPPS! PAGE NOT FOUND</h2>
+				<h2>OOPS! PAGE NOT FOUND</h2>
 				<p>
 					Sorry, the page you're attempting to access doesn't exist.
 					If you believe there's an issue please report it, or return
